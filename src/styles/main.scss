@@ -1,14 +1,19 @@
 $main: #1a222c;
 $sec: #4B5664;
 $purple: #54516A;
+$text : #393B47;
 $cut: 768px;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans');
+@import 'venobox';
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  color : $text;
 }
+
 
 @-webkit-keyframes pulse {
     from {
@@ -270,4 +275,8 @@ body {
       color: $sec;
     }
   }
+}
+
+h1, h2, h3, h4, h5{
+  font-family: 'Lato', sans-serif;
 }

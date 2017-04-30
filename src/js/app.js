@@ -116,3 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 }, false);
+
+$(document).ready(function(){
+    $('.venobox').venobox(); 
+});

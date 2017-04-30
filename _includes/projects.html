@@ -1,29 +1,25 @@
 <div class="container">
   <div class="user-details">
-    <h3> Featured Projects </h3>
+    <h3> Featured Projects</h3>
   </div>
+  {% for post in site.posts %}
+  {% assign value = forloop.index | modulo:2 %}
   <div class="row user-projects">
+    {% if value == 0 %}
     <div class="six columns images">
-      <img alt="mountains" src="{{ "/assets/img/mountains.jpg" | prepend: site.baseurl }}" />
+    {% else %}
+    <div class="six columns">
+    {%endif%}
+      <img src="{{ post.image }}" alt="mountains" />
     </div>
     <div class="six columns">
-      <h5> Project Title </h5>
-      <li> Featured Skills</li>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <a class="project-link" href="#">Check it out</a>
+      <h5>{{ post.title }}</h5>
+      {% for skill in post.skills %}
+      <li>{{ skill }}</li>
+      {% endfor %}
+      <p>{{ post.description }}</p>
+      <a href="{{ post.vimeo }}" class="venobox project-link" data-vbtype="vimeo">Check it out</a>
     </div>
   </div>
-  <div class="row user-projects">
-    <div class="six columns">
-      <img alt="mountains" src="{{ "/assets/img/skate.jpg" | prepend: site.baseurl }}" />
-    </div>
-    <div class="six columns">
-      <h5> Project Title </h5>
-      <ul>
-        <li> Featured Skills</li>
-      </ul>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <a class="project-link" href="#">Check it out</a>
-    </div>
-  </div>
+  {% endfor %}
 </div>
