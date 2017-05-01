@@ -2,9 +2,21 @@
     <p>&copy; {{site.username}}</p>
     <p>Build with Jekyll and <span class="love">❤</span> by <a href="https://nrandecker.github.io">Nathan Randecker</a></p>
 </footer>
+ <script>
+  function resize(){    
+    $("#canvas").outerWidth($(window).width()-$("#canvas").offset().top- Math.abs($("#canvas").outerWidth(true) - $("#canvas").outerWidth()));
+  }
+  $(document).ready(function(){
+    resize();
+    $(window).on("resize", function(){                      
+        resize();
+    });
+  });
+  </script>
 <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="{{ "/assets/js/sweet-scroll.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/assets/js/venobox.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/unity/Release/UnityLoader.js" | prepend: site.baseurl }}"></script>
 {% include google-analytics.html %}

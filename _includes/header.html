@@ -1,4 +1,18 @@
-<div id="particles-js">
+<div id="unity">
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
+    <script type='text/javascript'>
+  var Module = {
+    TOTAL_MEMORY: 268435456,
+    errorhandler: null,     // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+    compatibilitycheck: null,
+    backgroundColor: "#222C36",
+    splashStyle: "Light",
+    dataUrl: "{{ "/assets/unity/Release/bld.data" | prepend: site.baseurl }}",
+    codeUrl: "{{ "/assets/unity/Release/bld.js" | prepend: site.baseurl }}",
+    asmUrl: "{{ "/assets/unity/Release/bld.asm.js" | prepend: site.baseurl }}",
+    memUrl: "{{ "/assets/unity/Release/bld.mem" | prepend: site.baseurl }}",
+  };
+</script>
   <div class="content">
       <h1>
         <span class="site-title">{{site.username}}</span>
